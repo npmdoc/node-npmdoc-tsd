@@ -1,0 +1,2321 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/DefinitelyTyped/tsd">tsd (v0.6.5)</a>
+</h1>
+<h4>TypeScript Definition manager for DefinitelyTyped</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd">module tsd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.CommitMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>CommitMatcher
+            <span class="apidocSignatureSpan">(commitSha)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Context">
+            function <span class="apidocSignatureSpan">tsd.</span>Context
+            <span class="apidocSignatureSpan">(configFile, verbose)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>DateMatcher
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Def">
+            function <span class="apidocSignatureSpan">tsd.</span>Def
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.InfoMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>InfoMatcher
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Options">
+            function <span class="apidocSignatureSpan">tsd.</span>Options
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Query">
+            function <span class="apidocSignatureSpan">tsd.</span>Query
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.VersionMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>VersionMatcher
+            <span class="apidocSignatureSpan">(range)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.getAPI">
+            function <span class="apidocSignatureSpan">tsd.</span>getAPI
+            <span class="apidocSignatureSpan">(configPath, verbose)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.getContent">
+            function <span class="apidocSignatureSpan">tsd.</span>getContent
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>CommitMatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>Context.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>DateMatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>Def.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>InfoMatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>Query.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>VersionMatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.</span>defUtil</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.CommitMatcher">module tsd.CommitMatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.CommitMatcher.CommitMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>CommitMatcher
+            <span class="apidocSignatureSpan">(commitSha)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.CommitMatcher.prototype">module tsd.CommitMatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.CommitMatcher.prototype.filter">
+            function <span class="apidocSignatureSpan">tsd.CommitMatcher.prototype.</span>filter
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.CommitMatcher.prototype.getFilterFunc">
+            function <span class="apidocSignatureSpan">tsd.CommitMatcher.prototype.</span>getFilterFunc
+            <span class="apidocSignatureSpan">(commitSha)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Context">module tsd.Context</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Context.Context">
+            function <span class="apidocSignatureSpan">tsd.</span>Context
+            <span class="apidocSignatureSpan">(configFile, verbose)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Context.prototype">module tsd.Context.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Context.prototype.getInfo">
+            function <span class="apidocSignatureSpan">tsd.Context.prototype.</span>getInfo
+            <span class="apidocSignatureSpan">(details)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Context.prototype.getTypingsDir">
+            function <span class="apidocSignatureSpan">tsd.Context.prototype.</span>getTypingsDir
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Context.prototype.stackSettings">
+            function <span class="apidocSignatureSpan">tsd.Context.prototype.</span>stackSettings
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.DateMatcher">module tsd.DateMatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher.DateMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>DateMatcher
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.DateMatcher.prototype">module tsd.DateMatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher.prototype.best">
+            function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>best
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher.prototype.extractSelector">
+            function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>extractSelector
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher.prototype.filter">
+            function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>filter
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher.prototype.getFilterFunc">
+            function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>getFilterFunc
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.DateMatcher.prototype.latest">
+            function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>latest
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Def">module tsd.Def</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Def.Def">
+            function <span class="apidocSignatureSpan">tsd.</span>Def
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Def.getFrom">
+            function <span class="apidocSignatureSpan">tsd.Def.</span>getFrom
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Def.isDefPath">
+            function <span class="apidocSignatureSpan">tsd.Def.</span>isDefPath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Def.prototype">module tsd.Def.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Def.prototype.toString">
+            function <span class="apidocSignatureSpan">tsd.Def.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">tsd.Def.prototype.</span>nameTerm</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.InfoMatcher">module tsd.InfoMatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.InfoMatcher.InfoMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>InfoMatcher
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.InfoMatcher.prototype">module tsd.InfoMatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.InfoMatcher.prototype.filter">
+            function <span class="apidocSignatureSpan">tsd.InfoMatcher.prototype.</span>filter
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Options">module tsd.Options</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Options.Options">
+            function <span class="apidocSignatureSpan">tsd.</span>Options
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Options.fromJSON">
+            function <span class="apidocSignatureSpan">tsd.Options.</span>fromJSON
+            <span class="apidocSignatureSpan">(json)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tsd.Options.</span>main</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Query">module tsd.Query</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Query.Query">
+            function <span class="apidocSignatureSpan">tsd.</span>Query
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.Query.prototype">module tsd.Query.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">tsd.Query.prototype.</span>requiresHistory</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Query.prototype.addNamePattern">
+            function <span class="apidocSignatureSpan">tsd.Query.prototype.</span>addNamePattern
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Query.prototype.setVersionRange">
+            function <span class="apidocSignatureSpan">tsd.Query.prototype.</span>setVersionRange
+            <span class="apidocSignatureSpan">(range)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.Query.prototype.toString">
+            function <span class="apidocSignatureSpan">tsd.Query.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.VersionMatcher">module tsd.VersionMatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.VersionMatcher.VersionMatcher">
+            function <span class="apidocSignatureSpan">tsd.</span>VersionMatcher
+            <span class="apidocSignatureSpan">(range)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">tsd.VersionMatcher.</span>all</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">tsd.VersionMatcher.</span>latest</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.VersionMatcher.prototype">module tsd.VersionMatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.VersionMatcher.prototype.filter">
+            function <span class="apidocSignatureSpan">tsd.VersionMatcher.prototype.</span>filter
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.VersionMatcher.prototype.getLatest">
+            function <span class="apidocSignatureSpan">tsd.VersionMatcher.prototype.</span>getLatest
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tsd.defUtil">module tsd.defUtil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.contains">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>contains
+            <span class="apidocSignatureSpan">(list, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.containsDef">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>containsDef
+            <span class="apidocSignatureSpan">(list, def)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.defCompare">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>defCompare
+            <span class="apidocSignatureSpan">(aa, bb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.defSemverCompare">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>defSemverCompare
+            <span class="apidocSignatureSpan">(aa, bb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.extractExternals">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>extractExternals
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.extractReferenceTags">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>extractReferenceTags
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.fileCommitCompare">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>fileCommitCompare
+            <span class="apidocSignatureSpan">(aa, bb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.fileCompare">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>fileCompare
+            <span class="apidocSignatureSpan">(aa, bb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getDefs">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getDefs
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getHeads">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getHeads
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getHistoryBottom">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getHistoryBottom
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getHistoryTop">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getHistoryTop
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getLatest">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getLatest
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getPaths">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getPaths
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getPathsOf">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getPathsOf
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.getRecent">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>getRecent
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.matchCommit">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>matchCommit
+            <span class="apidocSignatureSpan">(list, commitSha)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.mergeDependencies">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>mergeDependencies
+            <span class="apidocSignatureSpan">(list, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.mergeDependenciesOf">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>mergeDependenciesOf
+            <span class="apidocSignatureSpan">(list, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.shaShort">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>shaShort
+            <span class="apidocSignatureSpan">(sha)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.uniqueDefVersion">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>uniqueDefVersion
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tsd.defUtil.uniqueDefs">
+            function <span class="apidocSignatureSpan">tsd.defUtil.</span>uniqueDefs
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd" id="apidoc.module.tsd">module tsd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.CommitMatcher" id="apidoc.element.tsd.CommitMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>CommitMatcher
+        <span class="apidocSignatureSpan">(commitSha)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CommitMatcher(commitSha) {
+    this.minimumShaLen = 2;
+    if (commitSha) {
+        this.commitSha = String(commitSha).toLowerCase();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Context" id="apidoc.element.tsd.Context">
+        function <span class="apidocSignatureSpan">tsd.</span>Context
+        <span class="apidocSignatureSpan">(configFile, verbose)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context(configFile, verbose) {
+    if (configFile === void 0) { configFile = null; }
+    if (verbose === void 0) { verbose = false; }
+    assertVar(configFile, 'string', 'configFile', true);
+    assertVar(verbose, 'boolean', 'verbose');
+    this.packageInfo = PackageJSON.getLocal();
+    this.settings = new JSONPointer(fileIO.readJSONSync(path.resolve(path.dirname(PackageJSON.find()), 'conf', 'settings.json')));
+    this.stackSettings(path.resolve(Paths.getUserHome(), Const.rc));
+    this.stackSettings(path.resolve(process.cwd(), Const.rc));
+    this.verbose = verbose;
+    this.paths = new Paths();
+    if (configFile) {
+        this.paths.configFile = path.resolve(configFile);
+    }
+    this.paths.cacheDir = Paths.getUserCacheDir();
+    this.config = new Config();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage as module
+
+TSD can be used as a JavaScript npm dependency:
+
+````js
+var tsd = require('tsd');
+var api = new tsd.API(new tsd.<span class="apidocCodeKeywordSpan">Context</span>('path/to/tsd-config.json'));
+api.search(new tsd.Selector('jquery/*')).then(function(res) {
+	// yes
+	util.inspect(res);
+
+}, function(err) {
+	// no
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher" id="apidoc.element.tsd.DateMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>DateMatcher
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DateMatcher(pattern) {
+    this.comparators = [];
+    if (pattern) {
+        this.extractSelector(pattern);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Def" id="apidoc.element.tsd.Def">
+        function <span class="apidocSignatureSpan">tsd.</span>Def
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Def(path) {
+    this.path = null;
+    this.project = null;
+    this.name = null;
+    this.semver = null;
+    this.label = null;
+    this.isLegacy = false;
+    this.isMain = true;
+    this.head = null;
+    this.history = [];
+    this.releases = [];
+    assertVar(path, 'string', 'path');
+    if (!defExp.test(path)) {
+        throw new VError('cannot part path %s to Def', path);
+    }
+    this.path = path;
+    var parts = this.path.replace(/\.d\.ts$/, '').split(/\//g);
+    this.project = parts[0];
+    this.name = parts.slice(1).join(':');
+    this.isMain = (parts.length === 2);
+    this.isLegacy = false;
+    if (parts.length &gt; 2 &amp;&amp; legacyFolders.indexOf(parts[1]) &gt; -1) {
+        this.isLegacy = true;
+        this.name = parts.slice(2).join(':');
+        this.isMain = (parts.length === 3);
+    }
+    versionEnd.lastIndex = 0;
+    var semMatch = versionEnd.exec(this.name);
+    if (semMatch) {
+        var sem = semMatch[1];
+        if (twoNums.test(sem)) {
+            sem += '.0';
+        }
+        if (semMatch.length &gt; 2 &amp;&amp; typeof semMatch[2] !== 'undefined') {
+            sem += semMatch[2];
+        }
+        var valid = semver.valid(sem, true);
+        if (valid) {
+            this.semver = valid;
+            this.isLegacy = true;
+            this.name = this.name.substr(0, semMatch.index);
+        }
+        else {
+        }
+    }
+    this.label = this.project + '/' + this.name + (this.semver ? '-v' + this.semver : '');
+    objectUtils.lockProps(this, lockProps);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.InfoMatcher" id="apidoc.element.tsd.InfoMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>InfoMatcher
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InfoMatcher() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Options" id="apidoc.element.tsd.Options">
+        function <span class="apidocSignatureSpan">tsd.</span>Options
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Options() {
+    this.minMatches = 0;
+    this.maxMatches = 0;
+    this.limitApi = 5;
+    this.resolveDependencies = false;
+    this.overwriteFiles = false;
+    this.saveToConfig = false;
+    this.saveBundle = false;
+    this.reinstallClean = false;
+    this.addToBundles = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Query" id="apidoc.element.tsd.Query">
+        function <span class="apidocSignatureSpan">tsd.</span>Query
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Query(pattern) {
+    this.patterns = [];
+    this.parseInfo = false;
+    this.loadHistory = false;
+    assertVar(pattern, 'string', 'pattern', true);
+    if (pattern) {
+        this.patterns.push(new NameMatcher(pattern));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.VersionMatcher" id="apidoc.element.tsd.VersionMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>VersionMatcher
+        <span class="apidocSignatureSpan">(range)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VersionMatcher(range) {
+    if (range === VersionMatcher.latest || range === VersionMatcher.all) {
+        this.range = range;
+    }
+    else if (range) {
+        this.range = semver.validRange(range, true);
+        assert(!!this.range, 'expected {a} to be a valid semver-range', range);
+    }
+    else {
+        this.range = VersionMatcher.latest;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.getAPI" id="apidoc.element.tsd.getAPI">
+        function <span class="apidocSignatureSpan">tsd.</span>getAPI
+        <span class="apidocSignatureSpan">(configPath, verbose)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getAPI(configPath, verbose) {
+    if (verbose === void 0) { verbose = false; }
+    assertVar(configPath, 'string', 'configPath');
+    return new API(new exports.Context(configPath, verbose));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.getContent" id="apidoc.element.tsd.getContent">
+        function <span class="apidocSignatureSpan">tsd.</span>getContent
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getContent(options) {
+    var api = getAPI(options);
+    return api.readConfig(false).then(function () {
+        var opts = new tsd.Options();
+        opts.resolveDependencies = false;
+        var query = new tsd.Query();
+        query.addNamePattern('*');
+        query.setVersionRange('all');
+        query.parseInfo = true;
+        return api.select(query, opts);
+    }).then(function (selection) {
+        return selection.definitions.filter(function (def) {
+            return !def.isLegacy &amp;&amp; def.isMain;
+        }).sort(tsd.defUtil.defCompare).map(function (def) {
+            var ret = {
+                project: def.project,
+                name: def.name,
+                path: def.path,
+                semver: (def.semver || 'latest')
+            };
+            if (def.head.info) {
+                ret.info = def.head.info;
+            }
+            if (def.head.dependencies) {
+                ret.dependencies = def.head.dependencies.map(function (dep) {
+                    var ret = {
+                        project: dep.project,
+                        name: dep.name,
+                        path: dep.path,
+                        semver: (dep.semver || 'latest')
+                    };
+                    return ret;
+                });
+            }
+            if (def.releases) {
+                ret.releases = def.releases.map(function (rel) {
+                    var ret = {
+                        path: rel.path,
+                        semver: (rel.semver || null)
+                    };
+                    return ret;
+                });
+            }
+            return ret;
+        });
+    }).then(function (content) {
+        var ret = {
+            repo: api.context.config.repo,
+            ref: api.context.config.ref,
+            count: content.length,
+            time: new Date().toISOString()
+        };
+        ret.urls = {
+            def: 'https://github.com/' + ret.repo + '/blob/' + ret.ref + '/{path}'
+        };
+        ret.content = content;
+        return ret;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.CommitMatcher" id="apidoc.module.tsd.CommitMatcher">module tsd.CommitMatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.CommitMatcher.CommitMatcher" id="apidoc.element.tsd.CommitMatcher.CommitMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>CommitMatcher
+        <span class="apidocSignatureSpan">(commitSha)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CommitMatcher(commitSha) {
+    this.minimumShaLen = 2;
+    if (commitSha) {
+        this.commitSha = String(commitSha).toLowerCase();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.CommitMatcher.prototype" id="apidoc.module.tsd.CommitMatcher.prototype">module tsd.CommitMatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.CommitMatcher.prototype.filter" id="apidoc.element.tsd.CommitMatcher.prototype.filter">
+        function <span class="apidocSignatureSpan">tsd.CommitMatcher.prototype.</span>filter
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (list) {
+    if (!this.commitSha) {
+        return list;
+    }
+    return list.filter(this.getFilterFunc(this.commitSha));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.CommitMatcher.prototype.getFilterFunc" id="apidoc.element.tsd.CommitMatcher.prototype.getFilterFunc">
+        function <span class="apidocSignatureSpan">tsd.CommitMatcher.prototype.</span>getFilterFunc
+        <span class="apidocSignatureSpan">(commitSha)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilterFunc = function (commitSha) {
+    if (fullSha.test(commitSha)) {
+        return function (file) {
+            return (file.commit &amp;&amp; file.commit.commitSha === commitSha);
+        };
+    }
+    assert(hex.test(commitSha), 'parameter not a hex {a}', commitSha);
+    var len = commitSha.length;
+    assert((len &gt;= this.minimumShaLen), 'parameter hex too short: expected {e}, got {a}', this.minimumShaLen, len);
+    return function (file) {
+        return (file.commit &amp;&amp; file.commit.commitSha.substr(0, len) === commitSha);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Context" id="apidoc.module.tsd.Context">module tsd.Context</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Context.Context" id="apidoc.element.tsd.Context.Context">
+        function <span class="apidocSignatureSpan">tsd.</span>Context
+        <span class="apidocSignatureSpan">(configFile, verbose)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context(configFile, verbose) {
+    if (configFile === void 0) { configFile = null; }
+    if (verbose === void 0) { verbose = false; }
+    assertVar(configFile, 'string', 'configFile', true);
+    assertVar(verbose, 'boolean', 'verbose');
+    this.packageInfo = PackageJSON.getLocal();
+    this.settings = new JSONPointer(fileIO.readJSONSync(path.resolve(path.dirname(PackageJSON.find()), 'conf', 'settings.json')));
+    this.stackSettings(path.resolve(Paths.getUserHome(), Const.rc));
+    this.stackSettings(path.resolve(process.cwd(), Const.rc));
+    this.verbose = verbose;
+    this.paths = new Paths();
+    if (configFile) {
+        this.paths.configFile = path.resolve(configFile);
+    }
+    this.paths.cacheDir = Paths.getUserCacheDir();
+    this.config = new Config();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage as module
+
+TSD can be used as a JavaScript npm dependency:
+
+````js
+var tsd = require('tsd');
+var api = new tsd.API(new tsd.<span class="apidocCodeKeywordSpan">Context</span>('path/to/tsd-config.json'));
+api.search(new tsd.Selector('jquery/*')).then(function(res) {
+	// yes
+	util.inspect(res);
+
+}, function(err) {
+	// no
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Context.prototype" id="apidoc.module.tsd.Context.prototype">module tsd.Context.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Context.prototype.getInfo" id="apidoc.element.tsd.Context.prototype.getInfo">
+        function <span class="apidocSignatureSpan">tsd.Context.prototype.</span>getInfo
+        <span class="apidocSignatureSpan">(details)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getInfo = function (details) {
+    if (details === void 0) { details = false; }
+    var info = {
+        version: this.packageInfo.getNameVersion(),
+        repo: 'https://github.com/' + this.config.repo + ' #' + this.config.ref
+    };
+    if (details) {
+        info.paths = this.paths;
+        info.typings = this.config.resolveTypingsPath(path.dirname(this.paths.configFile));
+        info.config = this.config.toJSON();
+    }
+    return info;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Context.prototype.getTypingsDir" id="apidoc.element.tsd.Context.prototype.getTypingsDir">
+        function <span class="apidocSignatureSpan">tsd.Context.prototype.</span>getTypingsDir
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTypingsDir = function () {
+    return this.config.resolveTypingsPath(path.dirname(this.paths.configFile));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Context.prototype.stackSettings" id="apidoc.element.tsd.Context.prototype.stackSettings">
+        function <span class="apidocSignatureSpan">tsd.Context.prototype.</span>stackSettings
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stackSettings = function (src) {
+    if (fs.existsSync(src)) {
+        if (this.verbose) {
+            console.log('using rc: ' + src);
+        }
+        this.settings.addSource(fileIO.readJSONSync(src));
+    }
+    else {
+        if (this.verbose) {
+            console.log('cannot find rc: ' + src);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.DateMatcher" id="apidoc.module.tsd.DateMatcher">module tsd.DateMatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher.DateMatcher" id="apidoc.element.tsd.DateMatcher.DateMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>DateMatcher
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DateMatcher(pattern) {
+    this.comparators = [];
+    if (pattern) {
+        this.extractSelector(pattern);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.DateMatcher.prototype" id="apidoc.module.tsd.DateMatcher.prototype">module tsd.DateMatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher.prototype.best" id="apidoc.element.tsd.DateMatcher.prototype.best">
+        function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>best
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">best = function (list) {
+    return this.latest(this.filter(list));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher.prototype.extractSelector" id="apidoc.element.tsd.DateMatcher.prototype.extractSelector">
+        function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>extractSelector
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractSelector = function (pattern) {
+    assertVar(pattern, 'string', 'pattern');
+    this.comparators = [];
+    if (!pattern) {
+        return;
+    }
+    termExp.lastIndex = 0;
+    var match;
+    while ((match = termExp.exec(pattern))) {
+        termExp.lastIndex = match.index + match[0].length;
+        assert(typeOf.hasOwnProp(comparators, match[1]), 'not a valid date comparator in filter {a}', match[0]);
+        var comp = new DateComp();
+        comp.date = new Date(match[2].replace(/;_/g, ' '));
+        assert(!!comp.date, 'not a valid date in filter {a}', match[0]);
+        comp.operator = match[1];
+        comp.comparator = comparators[match[1]];
+        this.comparators.push(comp);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher.prototype.filter" id="apidoc.element.tsd.DateMatcher.prototype.filter">
+        function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>filter
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (list) {
+    if (this.comparators.length === 0) {
+        return list;
+    }
+    return list.filter(this.getFilterFunc());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher.prototype.getFilterFunc" id="apidoc.element.tsd.DateMatcher.prototype.getFilterFunc">
+        function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>getFilterFunc
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilterFunc = function () {
+    var _this = this;
+    var len = this.comparators.length;
+    return function (file) {
+        var date = file.commit.changeDate;
+        if (!date) {
+            return false;
+        }
+        for (var i = 0; i &lt; len; i++) {
+            if (!_this.comparators[i].satisfies(date)) {
+                return false;
+            }
+        }
+        return true;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.DateMatcher.prototype.latest" id="apidoc.element.tsd.DateMatcher.prototype.latest">
+        function <span class="apidocSignatureSpan">tsd.DateMatcher.prototype.</span>latest
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">latest = function (list) {
+    if (this.comparators.length &gt; 0) {
+        var list = this.filter(list).sort(defUtil.fileCommitCompare);
+        if (list.length &gt; 0) {
+            return list[list.length - 1];
+        }
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Def" id="apidoc.module.tsd.Def">module tsd.Def</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Def.Def" id="apidoc.element.tsd.Def.Def">
+        function <span class="apidocSignatureSpan">tsd.</span>Def
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Def(path) {
+    this.path = null;
+    this.project = null;
+    this.name = null;
+    this.semver = null;
+    this.label = null;
+    this.isLegacy = false;
+    this.isMain = true;
+    this.head = null;
+    this.history = [];
+    this.releases = [];
+    assertVar(path, 'string', 'path');
+    if (!defExp.test(path)) {
+        throw new VError('cannot part path %s to Def', path);
+    }
+    this.path = path;
+    var parts = this.path.replace(/\.d\.ts$/, '').split(/\//g);
+    this.project = parts[0];
+    this.name = parts.slice(1).join(':');
+    this.isMain = (parts.length === 2);
+    this.isLegacy = false;
+    if (parts.length &gt; 2 &amp;&amp; legacyFolders.indexOf(parts[1]) &gt; -1) {
+        this.isLegacy = true;
+        this.name = parts.slice(2).join(':');
+        this.isMain = (parts.length === 3);
+    }
+    versionEnd.lastIndex = 0;
+    var semMatch = versionEnd.exec(this.name);
+    if (semMatch) {
+        var sem = semMatch[1];
+        if (twoNums.test(sem)) {
+            sem += '.0';
+        }
+        if (semMatch.length &gt; 2 &amp;&amp; typeof semMatch[2] !== 'undefined') {
+            sem += semMatch[2];
+        }
+        var valid = semver.valid(sem, true);
+        if (valid) {
+            this.semver = valid;
+            this.isLegacy = true;
+            this.name = this.name.substr(0, semMatch.index);
+        }
+        else {
+        }
+    }
+    this.label = this.project + '/' + this.name + (this.semver ? '-v' + this.semver : '');
+    objectUtils.lockProps(this, lockProps);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Def.getFrom" id="apidoc.element.tsd.Def.getFrom">
+        function <span class="apidocSignatureSpan">tsd.Def.</span>getFrom
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFrom = function (path) {
+    if (!defExp.test(path)) {
+        return null;
+    }
+    return new Def(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Def.isDefPath" id="apidoc.element.tsd.Def.isDefPath">
+        function <span class="apidocSignatureSpan">tsd.Def.</span>isDefPath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDefPath = function (path) {
+    return defExp.test(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Def.prototype" id="apidoc.module.tsd.Def.prototype">module tsd.Def.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Def.prototype.toString" id="apidoc.element.tsd.Def.prototype.toString">
+        function <span class="apidocSignatureSpan">tsd.Def.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return this.path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.InfoMatcher" id="apidoc.module.tsd.InfoMatcher">module tsd.InfoMatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.InfoMatcher.InfoMatcher" id="apidoc.element.tsd.InfoMatcher.InfoMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>InfoMatcher
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InfoMatcher() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.InfoMatcher.prototype" id="apidoc.module.tsd.InfoMatcher.prototype">module tsd.InfoMatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.InfoMatcher.prototype.filter" id="apidoc.element.tsd.InfoMatcher.prototype.filter">
+        function <span class="apidocSignatureSpan">tsd.InfoMatcher.prototype.</span>filter
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (list) {
+    return list;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Options" id="apidoc.module.tsd.Options">module tsd.Options</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Options.Options" id="apidoc.element.tsd.Options.Options">
+        function <span class="apidocSignatureSpan">tsd.</span>Options
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Options() {
+    this.minMatches = 0;
+    this.maxMatches = 0;
+    this.limitApi = 5;
+    this.resolveDependencies = false;
+    this.overwriteFiles = false;
+    this.saveToConfig = false;
+    this.saveBundle = false;
+    this.reinstallClean = false;
+    this.addToBundles = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Options.fromJSON" id="apidoc.element.tsd.Options.fromJSON">
+        function <span class="apidocSignatureSpan">tsd.Options.</span>fromJSON
+        <span class="apidocSignatureSpan">(json)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromJSON = function (json) {
+    var opts = new Options();
+    if (json) {
+        Object.keys(opts).forEach(function (key) {
+            if (key in json) {
+                assertVar(json[key], typeOf.get(opts[key]), 'json[' + key + ']');
+                opts[key] = json[key];
+            }
+        });
+    }
+    return opts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Query" id="apidoc.module.tsd.Query">module tsd.Query</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Query.Query" id="apidoc.element.tsd.Query.Query">
+        function <span class="apidocSignatureSpan">tsd.</span>Query
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Query(pattern) {
+    this.patterns = [];
+    this.parseInfo = false;
+    this.loadHistory = false;
+    assertVar(pattern, 'string', 'pattern', true);
+    if (pattern) {
+        this.patterns.push(new NameMatcher(pattern));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.Query.prototype" id="apidoc.module.tsd.Query.prototype">module tsd.Query.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Query.prototype.addNamePattern" id="apidoc.element.tsd.Query.prototype.addNamePattern">
+        function <span class="apidocSignatureSpan">tsd.Query.prototype.</span>addNamePattern
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addNamePattern = function (pattern) {
+    assertVar(pattern, 'string', 'pattern');
+    this.patterns.push(new NameMatcher(pattern));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Query.prototype.setVersionRange" id="apidoc.element.tsd.Query.prototype.setVersionRange">
+        function <span class="apidocSignatureSpan">tsd.Query.prototype.</span>setVersionRange
+        <span class="apidocSignatureSpan">(range)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setVersionRange = function (range) {
+    assertVar(range, 'string', 'range');
+    this.versionMatcher = new VersionMatcher(range);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.Query.prototype.toString" id="apidoc.element.tsd.Query.prototype.toString">
+        function <span class="apidocSignatureSpan">tsd.Query.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return this.patterns.map(function (matcher) {
+        return matcher.pattern;
+    }).join(', ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.VersionMatcher" id="apidoc.module.tsd.VersionMatcher">module tsd.VersionMatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.VersionMatcher.VersionMatcher" id="apidoc.element.tsd.VersionMatcher.VersionMatcher">
+        function <span class="apidocSignatureSpan">tsd.</span>VersionMatcher
+        <span class="apidocSignatureSpan">(range)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VersionMatcher(range) {
+    if (range === VersionMatcher.latest || range === VersionMatcher.all) {
+        this.range = range;
+    }
+    else if (range) {
+        this.range = semver.validRange(range, true);
+        assert(!!this.range, 'expected {a} to be a valid semver-range', range);
+    }
+    else {
+        this.range = VersionMatcher.latest;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.VersionMatcher.prototype" id="apidoc.module.tsd.VersionMatcher.prototype">module tsd.VersionMatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.VersionMatcher.prototype.filter" id="apidoc.element.tsd.VersionMatcher.prototype.filter">
+        function <span class="apidocSignatureSpan">tsd.VersionMatcher.prototype.</span>filter
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (list) {
+    var _this = this;
+    if (!this.range || this.range === VersionMatcher.all) {
+        return list.slice(0);
+    }
+    var map = list.reduce(function (map, def) {
+        var id = def.project + '/' + def.name;
+        if (id in map) {
+            map[id].push(def);
+        }
+        else {
+            map[id] = [def];
+        }
+        return map;
+    }, Object.create(null));
+    if (this.range === VersionMatcher.latest) {
+        return Object.keys(map).map(function (key) {
+            return _this.getLatest(map[key]);
+        });
+    }
+    return Object.keys(map).reduce(function (memo, key) {
+        map[key].forEach(function (def) {
+            if (!def.semver) {
+                if (semver.satisfies(semverMax, _this.range)) {
+                    memo.push(def);
+                }
+            }
+            else if (semver.satisfies(def.semver, _this.range)) {
+                memo.push(def);
+            }
+        });
+        return memo;
+    }, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.VersionMatcher.prototype.getLatest" id="apidoc.element.tsd.VersionMatcher.prototype.getLatest">
+        function <span class="apidocSignatureSpan">tsd.VersionMatcher.prototype.</span>getLatest
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLatest = function (list) {
+    var latest;
+    for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        var def = list[i];
+        if (!def.semver) {
+            return def;
+        }
+        else if (!latest) {
+            latest = def;
+        }
+        else if (semver.gt(def.semver, latest.semver)) {
+            latest = def;
+        }
+    }
+    return latest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tsd.defUtil" id="apidoc.module.tsd.defUtil">module tsd.defUtil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.contains" id="apidoc.element.tsd.defUtil.contains">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>contains
+        <span class="apidocSignatureSpan">(list, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function contains(list, file) {
+    var p = file.def.path;
+    for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        if (list[i].def.path === p) {
+            return true;
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.containsDef" id="apidoc.element.tsd.defUtil.containsDef">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>containsDef
+        <span class="apidocSignatureSpan">(list, def)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function containsDef(list, def) {
+    var p = def.path;
+    for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        if (list[i].path === p) {
+            return true;
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.defCompare" id="apidoc.element.tsd.defUtil.defCompare">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>defCompare
+        <span class="apidocSignatureSpan">(aa, bb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defCompare(aa, bb) {
+    if (!bb) {
+        return 1;
+    }
+    if (!aa) {
+        return -1;
+    }
+    if (aa.path &lt; bb.path) {
+        return -1;
+    }
+    else if (aa.path &gt; bb.path) {
+        return 1;
+    }
+    return 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.defSemverCompare" id="apidoc.element.tsd.defUtil.defSemverCompare">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>defSemverCompare
+        <span class="apidocSignatureSpan">(aa, bb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defSemverCompare(aa, bb) {
+    if (!bb) {
+        return 1;
+    }
+    if (!aa) {
+        return -1;
+    }
+    if (aa.semver &amp;&amp; !bb.semver) {
+        return -1;
+    }
+    else if (!aa.semver &amp;&amp; bb.semver) {
+        return 1;
+    }
+    return semver.compare(aa.semver, bb.semver);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.extractExternals" id="apidoc.element.tsd.defUtil.extractExternals">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>extractExternals
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extractExternals(source) {
+    var ret = [];
+    var match;
+    if (!externalModules.global) {
+        throw new VError('referenceTagExp RegExp must have global flag');
+    }
+    externalModules.lastIndex = 0;
+    while ((match = externalModules.exec(source))) {
+        if (match.length &gt;= 2 &amp;&amp; match[2].length &gt; 0) {
+            ret.push(match[2]);
+        }
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.extractReferenceTags" id="apidoc.element.tsd.defUtil.extractReferenceTags">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>extractReferenceTags
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extractReferenceTags(source) {
+    var ret = [];
+    var match;
+    if (!referenceTagExp.global) {
+        throw new VError('referenceTagExp RegExp must have global flag');
+    }
+    referenceTagExp.lastIndex = 0;
+    while ((match = referenceTagExp.exec(source))) {
+        if (match.length &gt; 0 &amp;&amp; match[1].length &gt; 0) {
+            ret.push(match[1]);
+        }
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.fileCommitCompare" id="apidoc.element.tsd.defUtil.fileCommitCompare">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>fileCommitCompare
+        <span class="apidocSignatureSpan">(aa, bb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fileCommitCompare(aa, bb) {
+    var aaDate = aa.commit &amp;&amp; aa.commit.changeDate;
+    var bbDate = bb.commit &amp;&amp; bb.commit.changeDate;
+    if (!bbDate) {
+        return 1;
+    }
+    if (!aaDate) {
+        return -1;
+    }
+    return dateUtils.compare(aaDate, bbDate);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.fileCompare" id="apidoc.element.tsd.defUtil.fileCompare">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>fileCompare
+        <span class="apidocSignatureSpan">(aa, bb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fileCompare(aa, bb) {
+    if (!bb) {
+        return 1;
+    }
+    if (!aa) {
+        return -1;
+    }
+    if (aa.def.path &lt; bb.def.path) {
+        return -1;
+    }
+    else if (aa.def.path &gt; bb.def.path) {
+        return 1;
+    }
+    if (aa.blobSha &lt; bb.blobSha) {
+        return -1;
+    }
+    else if (aa.blobSha &gt; bb.blobSha) {
+        return 1;
+    }
+    return 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getDefs" id="apidoc.element.tsd.defUtil.getDefs">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getDefs
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getDefs(list) {
+    return list.map(function (def) {
+        return def.def;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getHeads" id="apidoc.element.tsd.defUtil.getHeads">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getHeads
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHeads(list) {
+    return list.map(function (def) {
+        return def.head;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getHistoryBottom" id="apidoc.element.tsd.defUtil.getHistoryBottom">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getHistoryBottom
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHistoryBottom(list) {
+    return list.map(function (def) {
+        if (def.history.length === 1) {
+            return def.history[0];
+        }
+        else if (def.history.length &gt; 0) {
+            return def.history.sort(fileCompare)[def.history.length - 1];
+        }
+        return def.head;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getHistoryTop" id="apidoc.element.tsd.defUtil.getHistoryTop">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getHistoryTop
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHistoryTop(list) {
+    return list.map(function (def) {
+        if (def.history.length === 1) {
+            return def.history[0];
+        }
+        else if (def.history.length &gt; 0) {
+            return def.history.sort(fileCompare)[0];
+        }
+        return def.head;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getLatest" id="apidoc.element.tsd.defUtil.getLatest">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getLatest
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLatest(list) {
+    if (list.length === 1) {
+        return list[0];
+    }
+    else if (list.length &gt; 1) {
+        return list.sort(fileCompare)[0];
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getPaths" id="apidoc.element.tsd.defUtil.getPaths">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getPaths
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPaths(list) {
+    return list.map(function (def) {
+        return def.path;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getPathsOf" id="apidoc.element.tsd.defUtil.getPathsOf">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getPathsOf
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPathsOf(list) {
+    return list.map(function (file) {
+        return file.def.path;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.getRecent" id="apidoc.element.tsd.defUtil.getRecent">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>getRecent
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRecent(list) {
+    if (list.length === 1) {
+        return list[0];
+    }
+    else if (list.length &gt; 1) {
+        return list.sort(fileCompare)[list.length - 1];
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.matchCommit" id="apidoc.element.tsd.defUtil.matchCommit">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>matchCommit
+        <span class="apidocSignatureSpan">(list, commitSha)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function matchCommit(list, commitSha) {
+    var ret = [];
+    for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        var file = list[i];
+        if (file.commit &amp;&amp; file.commit.commitSha === commitSha) {
+            ret.push(file);
+        }
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.mergeDependencies" id="apidoc.element.tsd.defUtil.mergeDependencies">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>mergeDependencies
+        <span class="apidocSignatureSpan">(list, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mergeDependencies(list, target) {
+    target = target || [];
+    for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        var file = list[i];
+        if (!contains(target, file)) {
+            target.push(file);
+            mergeDependenciesOf(file.dependencies, target);
+        }
+    }
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.mergeDependenciesOf" id="apidoc.element.tsd.defUtil.mergeDependenciesOf">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>mergeDependenciesOf
+        <span class="apidocSignatureSpan">(list, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mergeDependenciesOf(list, target) {
+    target = target || [];
+    for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        var file = list[i].head;
+        if (!contains(target, file)) {
+            target.push(file);
+            mergeDependenciesOf(file.dependencies, target);
+        }
+    }
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.shaShort" id="apidoc.element.tsd.defUtil.shaShort">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>shaShort
+        <span class="apidocSignatureSpan">(sha)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shaShort(sha) {
+    if (!sha) {
+        return '&lt;no sha&gt;';
+    }
+    return sha.substr(0, Const.shaShorten);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.uniqueDefVersion" id="apidoc.element.tsd.defUtil.uniqueDefVersion">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>uniqueDefVersion
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uniqueDefVersion(list) {
+    var ret = [];
+    outer: for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        var check = list[i];
+        for (var j = 0, jj = ret.length; j &lt; jj; j++) {
+            if (check.def.path === ret[j].def.path) {
+                continue outer;
+            }
+        }
+        ret.push(check);
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tsd.defUtil.uniqueDefs" id="apidoc.element.tsd.defUtil.uniqueDefs">
+        function <span class="apidocSignatureSpan">tsd.defUtil.</span>uniqueDefs
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uniqueDefs(list) {
+    var ret = [];
+    outer: for (var i = 0, ii = list.length; i &lt; ii; i++) {
+        var check = list[i];
+        for (var j = 0, jj = ret.length; j &lt; jj; j++) {
+            if (check.path === ret[j].path) {
+                continue outer;
+            }
+        }
+        ret.push(check);
+    }
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
